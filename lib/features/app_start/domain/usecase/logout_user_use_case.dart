@@ -1,6 +1,6 @@
-//import 'package:amplify_core/amplify_core.dart';
+//import 'package:amplify_core/user_core.dart';
 import 'package:dartz/dartz.dart';
-import 'package:gimme_now_flutter/core/amplify_auth_service.dart';
+import 'package:gimme_now_flutter/core/user_auth_service.dart';
 import 'package:gimme_now_flutter/core/error/failure.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';
 import 'package:gimme_now_flutter/features/registration_or_login/domain/usecase/base_use_case.dart';

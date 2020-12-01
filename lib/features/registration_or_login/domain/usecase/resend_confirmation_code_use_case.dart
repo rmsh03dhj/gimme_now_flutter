@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:gimme_now_flutter/core/amplify_auth_service.dart';
+import 'package:gimme_now_flutter/core/user_auth_service.dart';
 import 'package:gimme_now_flutter/core/error/failure.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';
 

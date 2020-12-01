@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gimme_now_flutter/core/amplify_auth_service.dart';
+import 'package:gimme_now_flutter/core/user_auth_service.dart';
 import 'package:gimme_now_flutter/features/registration_or_login/domain/usecase/sign_up_use_case.dart';
 import 'package:gimme_now_flutter/core/error/failure.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';

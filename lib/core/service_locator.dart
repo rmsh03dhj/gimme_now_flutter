@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:gimme_now_flutter/core/amplify_auth_service.dart';
+import 'package:gimme_now_flutter/core/user_auth_service.dart';
 import 'package:gimme_now_flutter/features/app_start/domain/usecase/check_for_authentication_use_case.dart';
 import 'package:gimme_now_flutter/features/app_start/domain/usecase/logout_user_use_case.dart';
 import 'package:gimme_now_flutter/features/app_start/presentation/bloc/app_start_bloc.dart';
