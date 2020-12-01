@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:gimme_now_flutter/core/amplify_auth_service.dart';
 import 'package:gimme_now_flutter/core/error/failure.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';
-import 'package:gimme_now_flutter/features/utils/constants/strings.dart';
 
 import 'base_use_case.dart';
 
@@ -15,7 +14,7 @@ class ResendConfirmCodeUseCaseImpl implements ResendConfirmCodeUseCase {
   Future<Either<Failure, bool>> execute(ResendConfirmCodeParams confirmCodeParams) async {
     try {
       await userAuthServiceService.resendConfirmationCode(confirmCodeParams.email);
-        return Right(true);
+      return Right(true);
     } catch (e) {
       return Left(GeneralFailure(failureMessage: "Failed to sent verification code."));
     }

@@ -15,4 +15,5 @@ class DashboardLoadedState extends DashboardState {
 }
 
 class DashboardLoadingState extends DashboardState {}
+
 class DashboardErrorState extends DashboardState {}

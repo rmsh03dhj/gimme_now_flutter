@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/config/gimme_now_routes.dart';
 import 'core/navigation_service.dart';
+import 'core/routes/gimme_now_routes.dart';
 import 'core/service_locator.dart';
 import 'features/app_start/presentation/bloc/app_start_bloc.dart';
-import 'features/app_start/presentation/bloc/app_start_event.dart';
 import 'features/app_start/presentation/bloc/app_start_state.dart';
 import 'features/dashboard/presentation/bloc/dashboard_bloc.dart';
 import 'features/dashboard/presentation/bloc/dashboard_event.dart';
@@ -30,23 +29,18 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return BlocListener<AppStartBloc, AppStartState>(
       listener: (context, state) {
-        if (state is AmplifyConfigured) {
-          BlocProvider.of<AppStartBloc>(context).add(CheckForAuthentication());
-        }
         if (state is Uninitialized || state is Unauthenticated) {
           Timer(
             Duration(seconds: 2),
-                () => _navigator.navigateToAndReplace(GimmeNowRoutes.signUp),
+            () => _navigator.navigateToAndReplace(GimmeNowRoutes.signUp),
           );
         }
         if (state is Authenticated) {
-          Timer(
-              Duration(seconds: 2),
-                  () {
-                BlocProvider.of<DashBoardBloc>(context).add(LoadProfile(User(firstName: "Ram", lastName: "Dhj")));
-                _navigator.navigateTo(GimmeNowRoutes.dashboard);
-              }
-          );
+          Timer(Duration(seconds: 2), () {
+            BlocProvider.of<DashBoardBloc>(context)
+                .add(LoadProfile(User(firstName: "Ram", lastName: "Dhj")));
+            _navigator.navigateTo(GimmeNowRoutes.dashboard);
+          });
         }
       },
       child: Scaffold(

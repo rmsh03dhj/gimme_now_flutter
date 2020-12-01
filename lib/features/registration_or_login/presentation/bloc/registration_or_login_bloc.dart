@@ -21,8 +21,7 @@ class RegistrationOrLoginBloc extends Bloc<RegistrationOrLoginEvent, Registratio
       yield RegistrationOrLoginProcessingState();
       final failureOrValue =
           await signUpUseCase.execute(SignUpParams(password: event.password, email: event.email));
-      yield failureOrValue.fold((failure) => SignUpFailedState(failure.failureMessage),
-          (value) {
+      yield failureOrValue.fold((failure) => SignUpFailedState(failure.failureMessage), (value) {
         return ConfirmRegistrationStepState(User(email: event.email));
       });
     }
@@ -30,8 +29,7 @@ class RegistrationOrLoginBloc extends Bloc<RegistrationOrLoginEvent, Registratio
       yield RegistrationOrLoginProcessingState();
       final failureOrBool =
           await confirmCodeUseCase.execute(ConfirmCodeParams(email: event.email, code: event.code));
-      yield failureOrBool.fold((failure) => SignUpFailedState(failure.failureMessage),
-          (bool) {
+      yield failureOrBool.fold((failure) => SignUpFailedState(failure.failureMessage), (bool) {
         return SignUpSuccessState(event.email);
       });
     }
@@ -48,8 +46,7 @@ class RegistrationOrLoginBloc extends Bloc<RegistrationOrLoginEvent, Registratio
       yield RegistrationOrLoginProcessingState();
       final failureOrValue =
           await resendConfirmCodeUseCase.execute(ResendConfirmCodeParams(email: event.email));
-      yield failureOrValue.fold((failure) => SignUpFailedState(failure.failureMessage),
-          (value) {
+      yield failureOrValue.fold((failure) => SignUpFailedState(failure.failureMessage), (value) {
         return ReSentConfirmCodeState();
       });
     }

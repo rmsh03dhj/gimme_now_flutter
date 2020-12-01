@@ -22,34 +22,3 @@ class Unauthenticated extends AppStartState {
   @override
   String toString() => 'Unauthenticated';
 }
-
-class FreeSomeSpaceState extends AppStartState {
-  @override
-  String toString() => 'FreeSomeSpaceState';
-}
-
-class AppStartErrorState extends AppStartState {
-  final String errorMessage;
-
-  AppStartErrorState(this.errorMessage);
-  @override
-  String toString() => 'AppStartErrorState';
-}
-
-class UpdateRequiredState extends AppStartState {
-  @override
-  String toString() => 'UpdateRequiredState';
-}
-
-class AmplifyConfiguringFailed extends AppStartState {
-  final String errorMessage;
-
-  AmplifyConfiguringFailed(this.errorMessage);
-  @override
-  String toString() => 'AmplifyConfiguringFailed';
-}
-
-class AmplifyConfigured extends AppStartState {
-  @override
-  String toString() => 'AmplifyConfigured';
-}

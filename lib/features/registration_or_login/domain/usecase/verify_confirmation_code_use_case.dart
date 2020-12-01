@@ -14,8 +14,8 @@ class ConfirmCodeUseCaseImpl implements ConfirmCodeUseCase {
   @override
   Future<Either<Failure, bool>> execute(ConfirmCodeParams confirmCodeParams) async {
     try {
-      final res =
-          await userAuthServiceService.confirmAccount(confirmCodeParams.email, confirmCodeParams.code);
+      final res = await userAuthServiceService.confirmAccount(
+          confirmCodeParams.email, confirmCodeParams.code);
       if (res) {
         return Right(true);
       } else {

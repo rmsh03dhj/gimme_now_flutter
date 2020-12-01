@@ -7,11 +7,6 @@ abstract class AppStartEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class InitializeAmplify extends AppStartEvent {
-  @override
-  String toString() => 'InitializeAmplify';
-}
-
 class CheckForAuthentication extends AppStartEvent {
   @override
   String toString() => 'CheckForAuthentication';

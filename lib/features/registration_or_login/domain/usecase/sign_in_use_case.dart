@@ -13,10 +13,11 @@ class SignInUseCaseImpl implements SignInUseCase {
   @override
   Future<Either<Failure, bool>> execute(SignInParams signInParams) async {
     try {
-      final isSignedIn = await userAuthServiceService.signIn(signInParams.email, signInParams.password);
-      if(isSignedIn) {
+      final isSignedIn =
+          await userAuthServiceService.signIn(signInParams.email, signInParams.password);
+      if (isSignedIn) {
         return Right(true);
-      }else{
+      } else {
         return Left(GeneralFailure(failureMessage: signInFailed));
       }
     } catch (e) {

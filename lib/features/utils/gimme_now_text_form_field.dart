@@ -81,11 +81,10 @@ class _GimmeNowFormBuilderTextFieldState extends State<GimmeNowFormBuilderTextFi
             suffixIcon: Icon(
               widget.suffixIcon,
               color: Color(0xFF808080),
-            ),  prefixIcon:
-              widget.prefixIcon,
+            ),
+            prefixIcon: widget.prefixIcon,
             labelText: widget.label,
-            labelStyle: TextStyle(
-                color: Colors.grey, fontSize: 18, fontWeight: FontWeight.w500),
+            labelStyle: TextStyle(color: Colors.grey, fontSize: 18, fontWeight: FontWeight.w500),
             border: new OutlineInputBorder(borderSide: new BorderSide(color: Colors.grey)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),

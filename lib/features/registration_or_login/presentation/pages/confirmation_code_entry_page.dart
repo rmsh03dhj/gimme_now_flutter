@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:gimme_now_flutter/core/config/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/navigation_service.dart';
+import 'package:gimme_now_flutter/core/routes/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';
 import 'package:gimme_now_flutter/features/registration_or_login/data/models/user.dart';
 import 'package:gimme_now_flutter/features/registration_or_login/presentation/bloc/registration_or_login_bloc.dart';

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gimme_now_flutter/core/config/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart' as di;
 import 'package:gimme_now_flutter/core/service_locator.dart';
 import 'package:gimme_now_flutter/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:gimme_now_flutter/splash_screen.dart';
 
 import 'core/navigation_service.dart';
+import 'core/routes/gimme_now_routes.dart';
 import 'core/simple_bloc_delegate.dart';
 import 'features/app_start/presentation/bloc/app_start_bloc.dart';
 import 'features/app_start/presentation/bloc/app_start_event.dart';
@@ -14,7 +14,6 @@ import 'features/dashboard/presentation/bloc/dashboard_bloc.dart';
 import 'features/registration_or_login/presentation/bloc/registration_or_login_bloc.dart';
 import 'features/registration_or_login/presentation/pages/confirmation_code_entry_page.dart';
 import 'features/registration_or_login/presentation/pages/register_or_login_page_wrapper.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +32,6 @@ class RunApp extends StatefulWidget {
 }
 
 class _RunAppState extends State<RunApp> {
-
   @override
   void initState() {
     super.initState();
@@ -88,7 +86,8 @@ Route _registerRoutesWithParameters(RouteSettings settings) {
         return ConfirmCodeEntryPageWrapper(user);
       },
     );
-  }if (settings.name == GimmeNowRoutes.dashboard) {
+  }
+  if (settings.name == GimmeNowRoutes.dashboard) {
     final email = settings.arguments;
     return MaterialPageRoute(
       settings: RouteSettings(

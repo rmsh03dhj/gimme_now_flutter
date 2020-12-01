@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gimme_now_flutter/core/config/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/navigation_service.dart';
+import 'package:gimme_now_flutter/core/routes/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';
 import 'package:gimme_now_flutter/features/app_start/presentation/bloc/app_start_bloc.dart';
 import 'package:gimme_now_flutter/features/app_start/presentation/bloc/app_start_event.dart';

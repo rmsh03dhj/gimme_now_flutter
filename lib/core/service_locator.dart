@@ -35,5 +35,5 @@ Future<void> init() async {
 
   ///other services
   sl.registerLazySingleton(() => NavigationService());
-  sl.registerLazySingleton<UserAuthService>(() => AmplifyAuthServiceImpl());
+  sl.registerLazySingleton<UserAuthService>(() => UserAuthServiceImpl());
 }

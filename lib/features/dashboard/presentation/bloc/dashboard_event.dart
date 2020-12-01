@@ -6,13 +6,13 @@ abstract class DashboardEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadProfile extends DashboardEvent{
+class LoadProfile extends DashboardEvent {
   final User user;
 
   LoadProfile(this.user);
+}
 
-
-}class UpdateProfile extends DashboardEvent{
+class UpdateProfile extends DashboardEvent {
   final User user;
 
   UpdateProfile(this.user);

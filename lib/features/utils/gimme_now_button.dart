@@ -10,16 +10,16 @@ class GimmeNowButton extends StatelessWidget {
   final bool showCircularProgressIndicator;
   final bool showTickSymbol;
 
-  const GimmeNowButton(
-      {Key key,
-      this.text,
-      this.onPressed,
-      this.buttonColor,
-      this.textColor,
-      this.showCircularProgressIndicator = false,
-      this.showTickSymbol = false,
-      this.borderColor})
-      : super(key: key);
+  const GimmeNowButton({
+    Key key,
+    this.text,
+    this.onPressed,
+    this.buttonColor,
+    this.textColor,
+    this.showCircularProgressIndicator = false,
+    this.showTickSymbol = false,
+    this.borderColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

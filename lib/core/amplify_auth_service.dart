@@ -12,7 +12,7 @@ abstract class UserAuthService {
 const awsUserPoolId = 'ap-southeast-2_RQo8DXiYi';
 const awsClientId = '2qn30atjv2kqothtqrcq20b35s';
 
-class AmplifyAuthServiceImpl implements UserAuthService {
+class UserAuthServiceImpl implements UserAuthService {
   /// Login user
   Future<bool> signIn(String email, String password) async {
     try {
@@ -80,11 +80,7 @@ class AmplifyAuthServiceImpl implements UserAuthService {
       final _userPool = CognitoUserPool(awsUserPoolId, awsClientId);
 
       final data = await _userPool.signUp(email, password, userAttributes: userAttributes);
-      print(data);
-      print(data.userConfirmed);
-      print(data.user);
-      print(data.user.username);
-      return data!=null;
+      return data != null;
     } catch (e) {
       print(e);
       throw (e);

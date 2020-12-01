@@ -14,10 +14,11 @@ class SignUpUseCaseImpl implements SignUpUseCase {
   @override
   Future<Either<Failure, bool>> execute(SignUpParams signUpParams) async {
     try {
-      final isSignedUp = await userAuthServiceService.signUp(signUpParams.email, signUpParams.password);
-      if(isSignedUp) {
+      final isSignedUp =
+          await userAuthServiceService.signUp(signUpParams.email, signUpParams.password);
+      if (isSignedUp) {
         return Right(true);
-      }else{
+      } else {
         return Left(GeneralFailure(failureMessage: signUpFailed));
       }
     } catch (e) {

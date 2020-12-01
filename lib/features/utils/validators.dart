@@ -23,7 +23,7 @@ class Validators {
   static FormFieldValidator length() {
     return (value) {
       if (value != null && value.isNotEmpty) {
-        if (value.length < 6) return "Length should be greater than 6";
+        if (value.length < 8) return "Length should be greater than 8";
       }
       return null;
     };

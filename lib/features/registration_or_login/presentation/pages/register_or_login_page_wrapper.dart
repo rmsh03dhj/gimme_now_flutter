@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:gimme_now_flutter/core/config/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/navigation_service.dart';
+import 'package:gimme_now_flutter/core/routes/gimme_now_routes.dart';
 import 'package:gimme_now_flutter/core/service_locator.dart';
 import 'package:gimme_now_flutter/features/registration_or_login/presentation/bloc/registration_or_login_bloc.dart';
 import 'package:gimme_now_flutter/features/registration_or_login/presentation/bloc/registration_or_login_event.dart';
@@ -47,7 +47,8 @@ class _RegistrationOrLoginPageState extends State<RegistrationOrLoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<RegistrationOrLoginBloc, RegistrationOrLoginState>(listener: (context, state) {
+    return BlocListener<RegistrationOrLoginBloc, RegistrationOrLoginState>(
+        listener: (context, state) {
       if (state is SignUpFailedState) {
         Scaffold.of(context)
           ..showSnackBar(
@@ -75,7 +76,8 @@ class _RegistrationOrLoginPageState extends State<RegistrationOrLoginPage> {
         _navigateService.navigateToAndReplace(GimmeNowRoutes.code, arguments: state.user);
       }
     }, child: SingleChildScrollView(
-      child: BlocBuilder<RegistrationOrLoginBloc, RegistrationOrLoginState>(builder: (context, state) {
+      child:
+          BlocBuilder<RegistrationOrLoginBloc, RegistrationOrLoginState>(builder: (context, state) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -212,7 +214,10 @@ class _RegistrationOrLoginPageState extends State<RegistrationOrLoginPage> {
                                   ),
                                   controller: _confirmPasswordController,
                                   obscureText: _confirmPasswordVisible,
-                                  validators: [Validators.required(), Validators.length()],
+                                  validators: [
+                                    Validators.confirmPasswordMatchWithPassword(
+                                        _passwordController.text)
+                                  ],
                                   keyboardType: TextInputType.text,
                                   focusNode: _confirmPasswordFocusNode,
                                   onFieldSubmitted: (_) {
@@ -229,7 +234,8 @@ class _RegistrationOrLoginPageState extends State<RegistrationOrLoginPage> {
                           Container(
                             height: 16,
                           ),
-                          BlocBuilder<RegistrationOrLoginBloc, RegistrationOrLoginState>(builder: (context, state) {
+                          BlocBuilder<RegistrationOrLoginBloc, RegistrationOrLoginState>(
+                              builder: (context, state) {
                             return GimmeNowButton(
                               text: _signIn ? signIn : signUp,
                               showCircularProgressIndicator:
@@ -241,11 +247,13 @@ class _RegistrationOrLoginPageState extends State<RegistrationOrLoginPage> {
                               onPressed: () {
                                 if (_formKey.currentState.validate()) {
                                   if (_signIn) {
-                                    BlocProvider.of<RegistrationOrLoginBloc>(context).add(SignInPressed(
-                                        _emailController.text, _passwordController.text));
+                                    BlocProvider.of<RegistrationOrLoginBloc>(context).add(
+                                        SignInPressed(
+                                            _emailController.text, _passwordController.text));
                                   } else {
-                                    BlocProvider.of<RegistrationOrLoginBloc>(context).add(SignUpPressed(
-                                        _emailController.text, _passwordController.text));
+                                    BlocProvider.of<RegistrationOrLoginBloc>(context).add(
+                                        SignUpPressed(
+                                            _emailController.text, _passwordController.text));
                                   }
                                 }
                               },
