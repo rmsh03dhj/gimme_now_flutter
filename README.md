@@ -1,16 +1,15 @@
-# gimme_now_flutter
+# Gimme Now
 
-A new Flutter application.
+This is a mobile application developed using Flutter Framework. I have followed [flutter clean TDD architecture](https://pub.dev/packages/flutter_clean_architecture) and used [flutter bloc](https://pub.dev/packages/flutter_bloc) for state management.
 
-## Getting Started
+The main thing I wanted to show case here is integrating AWS services for user authenication. I have used [amazon_cognito_identity_dart_2](https://pub.dev/packages/amazon_cognito_identity_dart_2) third party library for it.
 
-This project is a starting point for a Flutter application.
+For project demo, I have attached a video below.
+<p align="center">
+<img src="gimme_now.gif" width="220" height="450"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Short Description
+This app can create a user in aws congito using email address which can be used for authentication. When user signs up, he will receive an confirmation code on that email address. Then user can enter the code and sign up successfully.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Once sign up is successful, then user can use it for signing in when required. 
