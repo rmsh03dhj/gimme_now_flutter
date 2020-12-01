@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"gimmenowflutter668e3cb5": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

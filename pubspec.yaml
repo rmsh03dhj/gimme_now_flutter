@@ -1,0 +1,38 @@
+name: gimme_now_flutter
+description: A new Flutter application.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.0
+  flutter_bloc: ^6.0.5
+  equatable: ^1.2.0
+  flutter_clean_architecture: ^3.1.0
+  get_it: ^4.0.4
+  dartz:
+  flutter_form_builder: ^3.14.1
+  mockito: ^4.1.3
+  bloc_test: ^7.1.0
+  amazon_cognito_identity_dart_2: ^0.1.19
+  flutter_launcher_icons: "^0.8.0"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo_small.png"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
